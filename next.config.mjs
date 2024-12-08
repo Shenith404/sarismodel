@@ -5,6 +5,7 @@ const nextConfig = {
   },
   experimental: {
     reactCompiler: true,
+    turbo: false,
     ppr: "incremental",
   },
   images: {
