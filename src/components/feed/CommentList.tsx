@@ -22,7 +22,7 @@ const CommentList = ({
     if (!user || !desc) return;
 
     addOptimisticComment({
-      id: Math.random(),
+      id: Math.random().toString(),
       desc,
       createdAt: new Date(Date.now()),
       updatedAt: new Date(Date.now()),
@@ -46,7 +46,7 @@ const CommentList = ({
     try {
       const createdComment = await addComment(postId, desc);
       setCommentState((prev) => [createdComment, ...prev]);
-    } catch (err) {}
+    } catch (err) { }
   };
 
   const [optimisticComments, addOptimisticComment] = useOptimistic(
